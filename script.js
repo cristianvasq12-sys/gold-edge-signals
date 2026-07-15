@@ -74,6 +74,7 @@ const translations = {
     "nav-pricing": "Precios",
     "nav-testimonials": "Testimonios",
     "nav-faq": "FAQ",
+    "nav-contact": "Contacto",
     "nav-cta": "Comenzar",
     
     "mobile-nav-home": "Inicio",
@@ -82,6 +83,7 @@ const translations = {
     "mobile-nav-pricing": "Precios",
     "mobile-nav-testimonials": "Testimonios",
     "mobile-nav-faq": "FAQ",
+    "mobile-nav-contact": "Contacto",
     "mobile-nav-cta": "Comenzar",
     
     // Hero
@@ -166,7 +168,7 @@ const translations = {
     "test-2-text": '"Me encanta su transparencia. Muestran los trades perdidos también, pero su win rate es tan sólido que el balance mensual siempre es positivo."',
     "test-2-user": "Sandra M.",
     "test-2-status": "Miembro VIP desde Julio 2026",
-    "test-3-text": '"La opción de Binance Pay hace que sea muy fácil pagar en USDT. Obtuve mi enlace de Discord al instante. Recomiendo el Plan Anual."',
+    "test-3-text": '"La opción de Binance Pay hace que sea muy fácil pagar en USDT. Obtuve mi enlace de Telegram al instante. Recomiendo el Plan Anual."',
     "test-3-user": "Lars K.",
     "test-3-status": "Miembro VIP desde Julio 2026",
     "test-4-text": '"Es el mejor canal de señales que he probado. La gestión de riesgo del 1% me ha ayudado a proteger mi cuenta y crecer de forma constante."',
@@ -189,7 +191,7 @@ const translations = {
     "faq-tagline": "Preguntas",
     "faq-title": "Preguntas Frecuentes",
     "faq-q1": "¿Cómo recibo las señales?",
-    "faq-a1": "Todas las señales se transmiten en vivo a través de nuestro canal privado de Telegram VIP y Discord VIP. Proporcionamos precio de entrada, stop loss y tres objetivos de ganancia.",
+    "faq-a1": "Todas las señales se transmiten en vivo a través de nuestro canal privado de Telegram VIP. Proporcionamos precio de entrada, stop loss y tres objetivos de ganancia.",
     "faq-q2": "¿Qué métodos de pago aceptan?",
     "faq-a2": "Aceptamos oficialmente Binance Pay y transferencias directas de USDT a través de las redes TRC20 y BSC. Esto permite transacciones instantáneas y de bajo costo.",
     "faq-q3": "¿Puedo cancelar mi suscripción?",
@@ -212,14 +214,15 @@ const translations = {
     // Checkout Modal
     "modal-checkout-title": "Escanea para Pagar",
     "modal-amount-prompt": "Monto exacto a enviar:",
-    "modal-verify-btn": "Verificar Pago (Simular)",
+    "modal-verify-btn": "Verificar Pago",
     "modal-loading": "Verificando pago en la blockchain...",
     "modal-connecting": "Confirmando transacción...",
-    "modal-steps-activation": "Pasos para activar acceso:",
-    "modal-step-1": "1. Haz clic en el botón de abajo para unirte al canal de Telegram.",
-    "modal-step-2-label": "2. El bot VIP verificará tu ID de transacción.",
-    "modal-step-3": "3. Recibirás tu acceso VIP de forma instantánea.",
-    "modal-telegram-btn": "Unirse al Telegram VIP"
+    "modal-steps-activation": "Pasos para activar tu acceso VIP:",
+    "modal-step-1": "1. Haz clic en el botón de abajo para abrir nuestro chat de Telegram.",
+    "modal-step-2-label": "2. Envía tu comprobante o captura de pantalla de la transacción.",
+    "modal-step-3": "3. Validaremos tu soporte y recibirás tu acceso al canal VIP al instante.",
+    "modal-telegram-btn": "<i class=\"fa-brands fa-telegram text-xl\"></i> Enviar Comprobante por Telegram",
+    "modal-usdt-only-warning": "* Solo se reciben pagos por medio de USDT"
   },
   en: {
     // Nav
@@ -229,6 +232,7 @@ const translations = {
     "nav-pricing": "Pricing",
     "nav-testimonials": "Testimonials",
     "nav-faq": "FAQ",
+    "nav-contact": "Contact",
     "nav-cta": "Get Started",
     
     "mobile-nav-home": "Home",
@@ -237,6 +241,7 @@ const translations = {
     "mobile-nav-pricing": "Pricing",
     "mobile-nav-testimonials": "Testimonials",
     "mobile-nav-faq": "FAQ",
+    "mobile-nav-contact": "Contact",
     "mobile-nav-cta": "Get Started",
     
     // Hero
@@ -321,7 +326,7 @@ const translations = {
     "test-2-text": '"I love their transparency. They show the losing trades too, but their win rate is so solid that the balance sheet is always green."',
     "test-2-user": "Sandra M.",
     "test-2-status": "VIP Member since July 2026",
-    "test-3-text": '"Binance Pay option made it so easy to pay in USDT. Got my Discord link instantly. Totally recommend the Annual VIP package."',
+    "test-3-text": '"Binance Pay option made it so easy to pay in USDT. Got my Telegram link instantly. Totally recommend the Annual VIP package."',
     "test-3-user": "Lars K.",
     "test-3-status": "VIP Member since July 2026",
     "test-4-text": '"It\'s the best signals channel I\'ve tried. The 1% risk management has helped me protect my account and grow steadily."',
@@ -344,7 +349,7 @@ const translations = {
     "faq-tagline": "Questions",
     "faq-title": "Frequently Asked Questions",
     "faq-q1": "How do I receive the signals?",
-    "faq-a1": "All signals are broadcast live through our private VIP Telegram channel and VIP Discord. We provide entry price, stop loss, and three take profit targets.",
+    "faq-a1": "All signals are broadcast live through our private VIP Telegram channel. We provide entry price, stop loss, and three take profit targets.",
     "faq-q2": "What forms of payment do you support?",
     "faq-a2": "We officially support Binance Pay and direct USDT transfers via TRC20 and BSC networks. This allows for instant, secure, and low-fee transactions.",
     "faq-q3": "Can I cancel my subscription?",
@@ -367,14 +372,15 @@ const translations = {
     // Checkout Modal
     "modal-checkout-title": "Scan to Pay",
     "modal-amount-prompt": "Exact amount to send:",
-    "modal-verify-btn": "Verify Payment (Simulate)",
+    "modal-verify-btn": "Verify Payment",
     "modal-loading": "Verifying blockchain transaction...",
     "modal-connecting": "Confirming transaction...",
-    "modal-steps-activation": "Steps to activate access:",
-    "modal-step-1": "1. Click the button below to join our Telegram channel.",
-    "modal-step-2-label": "2. Our VIP bot will verify your transaction ID.",
-    "modal-step-3": "3. You will receive your VIP access instantly.",
-    "modal-telegram-btn": "Join VIP Telegram"
+    "modal-steps-activation": "Steps to activate your VIP access:",
+    "modal-step-1": "1. Click the button below to open our Telegram chat.",
+    "modal-step-2-label": "2. Send your transaction screenshot or proof of payment.",
+    "modal-step-3": "3. We will validate your proof and send your VIP channel access link instantly.",
+    "modal-telegram-btn": "<i class=\"fa-brands fa-telegram text-xl\"></i> Send Proof via Telegram",
+    "modal-usdt-only-warning": "* Payments are only accepted via USDT"
   }
 };
 
