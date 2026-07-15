@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gold Edge Signals | Premium Forex & Gold Trading Signals</title>
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  <meta name="description"
+    content="Maximize your trading edge in XAUUSD and major Forex pairs with professional real-time signals, high win rate, and premium UI.">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              light: '#fdf2d5',
+              soft: '#f3e5ab',
+              DEFAULT: '#d4af37',
+              dark: '#aa8c2c',
+              goldBg: '#1e1a0a'
+            },
+            dark: {
+              deep: '#06070a',
+              base: '#0B0C10',
+              card: '#151922',
+              cardLight: '#1f2635',
+              border: '#2e3a4e',
+              textMuted: '#94a3b8'
+            },
+            neonBlue: {
+              DEFAULT: '#2563eb',
+              light: '#60a5fa',
+              dark: '#1d4ed8',
+              bg: '#0f172a'
+            }
+          },
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Glassmorphism utility */
+    .glass-nav {
+      background: rgba(11, 12, 16, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .glass-card {
+      background: rgba(21, 25, 34, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(46, 58, 78, 0.5);
+    }
+
+    .glow-gold {
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+    }
+
+    .glow-gold-hover:hover {
+      box-shadow: 0 0 35px rgba(212, 175, 55, 0.3);
+      border-color: rgba(212, 175, 55, 0.5);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #06070a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #1f2635;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+  </style>
+</head>
+
+<body class="bg-dark-deep text-white font-sans overflow-x-hidden">
+
+  <!-- Header / Navegación -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-dark-border/40 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <img src="logo.jpg" alt="Gold Edge Signals Logo"
+          class="w-16 h-16 rounded-full object-cover border-2 border-gold shadow-md shadow-gold/25 group-hover:scale-105 transition-transform">
+        <span
+          class="text-xl font-extrabold tracking-wider bg-gradient-to-r from-white via-gold-soft to-gold bg-clip-text text-transparent">
+          GOLD EDGE<span class="text-white font-light"> SIGNALS</span>
+        </span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#home" id="nav-home"
+          class="text-sm font-medium text-dark-textMuted hover:text-gold transition-colors">Inicio</a>
+        <a href="#about" id="nav-about"
+          class="text-sm font-medium text-dark-textMuted hover:text-gold transition-colors">Nosotros</a>
+        <a href="#pricing" id="nav-pricing"
+          class="text-sm font-medium text-dark-textMuted hover:text-gold transition-colors">Precios</a>
+        <a href="#testimonials" id="nav-testimonials"
+          class="text-sm font-medium text-dark-textMuted hover:text-gold transition-colors">Testimonios</a>
+        <a href="#faq" id="nav-faq"
+          class="text-sm font-medium text-dark-textMuted hover:text-gold transition-colors">FAQ</a>
+      </nav>
+
+      <!-- CTA Button & Mobile Menu Toggle & Language Switches -->
+      <div class="flex items-center gap-4">
+        <!-- Selector de Idioma (Desktop) -->
+        <div
+          class="hidden sm:flex items-center gap-3 mr-2 bg-dark-card/60 border border-dark-border/40 rounded-full px-3 py-1.5 shadow-md">
+          <button onclick="changeLanguage('es')" id="btn-lang-es"
+            class="flex items-center gap-1 text-xs hover:text-gold transition-all font-bold text-gold scale-105">
+            <span>🇪🇸</span> <span>ES</span>
+          </button>
+          <span class="text-dark-border">|</span>
+          <button onclick="changeLanguage('en')" id="btn-lang-en"
+            class="flex items-center gap-1 text-xs hover:text-gold transition-all font-medium text-dark-textMuted">
+            <span>🇺🇸</span> <span>EN</span>
+          </button>
+        </div>
+
+        <a href="#pricing" id="nav-cta"
+          class="hidden sm:inline-flex px-5 py-2.5 rounded-lg border border-gold text-gold font-semibold text-sm hover:bg-gold hover:text-dark-deep transition-all duration-300 shadow-md hover:shadow-gold/20">
+          Comenzar
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden text-white hover:text-gold focus:outline-none"
+          aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu"
+      class="hidden md:hidden w-full bg-dark-base border-b border-dark-border px-6 py-4 flex flex-col gap-4 transition-all duration-300">
+      <a href="#home" id="mobile-nav-home" class="mobile-link text-lg text-dark-textMuted hover:text-gold">Inicio</a>
+      <a href="#about" id="mobile-nav-about"
+        class="mobile-link text-lg text-dark-textMuted hover:text-gold">Nosotros</a>
+      <a href="#pricing" id="mobile-nav-pricing"
+        class="mobile-link text-lg text-dark-textMuted hover:text-gold">Precios</a>
+      <a href="#testimonials" id="mobile-nav-testimonials"
+        class="mobile-link text-lg text-dark-textMuted hover:text-gold">Testimonios</a>
+      <a href="#faq" id="mobile-nav-faq" class="mobile-link text-lg text-dark-textMuted hover:text-gold">FAQ</a>
+      <a href="#pricing" id="mobile-nav-cta"
+        class="mobile-link py-3 mt-2 rounded-lg bg-gold text-dark-deep text-center font-bold">Comenzar</a>
+
+      <!-- Selector de Idioma (Mobile) -->
+      <div class="flex justify-center gap-6 py-3 border-t border-dark-border/40 mt-2">
+        <button onclick="changeLanguage('es')" id="mobile-btn-lang-es"
+          class="flex items-center gap-2 text-gold font-bold text-sm">
+          <span>🇪🇸</span> Español (ES)
+        </button>
+        <button onclick="changeLanguage('en')" id="mobile-btn-lang-en"
+          class="flex items-center gap-2 text-dark-textMuted font-medium text-sm">
+          <span>🇺🇸</span> English (EN)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative pt-36 pb-20 md:pt-48 md:pb-32 flex items-center justify-center overflow-hidden">
+    <!-- Ambient Background Gradients -->
+    <div
+      class="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-gold/10 rounded-full filter blur-[100px] pointer-events-none">
+    </div>
+    <div
+      class="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-neonBlue/10 rounded-full filter blur-[120px] pointer-events-none">
+    </div>
+
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+      <!-- Tagline -->
+      <div id="hero-tagline"
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-semibold uppercase tracking-wider mb-6 animate-pulse">
+        <i class="fa-solid fa-crown"></i> Motor de Trading Institucional
+      </div>
+
+      <!-- Main Title -->
+      <h1 id="hero-title" class="text-4xl md:text-7xl font-extrabold tracking-tight leading-none mb-6">
+        Domina el Mercado del Oro <br>
+        <span
+          class="bg-gradient-to-r from-gold-soft via-gold to-gold-dark bg-clip-text text-transparent drop-shadow-md">
+          Análisis de Nivel Experto
+        </span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p id="hero-subtitle" class="text-dark-textMuted text-base md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        Obtén configuraciones de alta probabilidad en tiempo real, diseñadas para hacer crecer cuentas de bajo capital. Ejecución de nivel institucional, datos puros, gestión de riesgo estricta y seguimiento visual constante.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#pricing" id="hero-btn-join"
+          class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold via-gold to-gold-dark text-dark-deep font-bold text-lg hover:scale-105 transition-all shadow-lg shadow-gold/25 glow-gold">
+          Únete Ahora <i class="fa-solid fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-dark-border/40">
+        <div>
+          <h3 class="text-3xl font-extrabold text-white">92.4%</h3>
+          <p id="stat-win" class="text-xs uppercase text-dark-textMuted font-semibold mt-1">Tasa de Acierto Verificada
+          </p>
+        </div>
+        <div>
+          <h3 class="text-3xl font-extrabold text-gold">+4,800</h3>
+          <p id="stat-pips" class="text-xs uppercase text-dark-textMuted font-semibold mt-1">Pips Mensuales</p>
+        </div>
+        <div>
+          <h3 class="text-3xl font-extrabold text-white">1:3+</h3>
+          <p id="stat-risk" class="text-xs uppercase text-dark-textMuted font-semibold mt-1">Riesgo Beneficio Prom.</p>
+        </div>
+        <div>
+          <h3 class="text-3xl font-extrabold text-gold">24/5</h3>
+          <p id="stat-coverage" class="text-xs uppercase text-dark-textMuted font-semibold mt-1">Cobertura de Mercado
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-20 bg-dark-base/50 relative border-t border-b border-dark-border/40">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gold/5 rounded-full filter blur-3xl pointer-events-none">
+      </div>
+      
+      <div class="relative z-10 flex flex-col items-center">
+        <span id="about-tagline" class="text-xs font-bold text-gold uppercase tracking-widest mb-2">Quiénes Somos</span>
+        <h2 id="about-title" class="text-3xl md:text-5xl font-extrabold text-white mb-6">Traders Institucionales Experimentados</h2>
+        <p id="about-desc" class="text-dark-textMuted mb-8 leading-relaxed max-w-2xl">
+          Gold Edge Signals fue fundada por un equipo de traders profesionales de cuenta propia con una experiencia
+          combinada de más de 12 años en los mercados de divisas y materias primas. No dependemos de indicadores
+          minoristas; rastreamos los flujos bancarios globales y la liquidez del mercado.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 text-left max-w-2xl w-full">
+          <div class="glass-card rounded-xl p-5 border border-dark-border/60 flex items-start gap-4">
+            <span class="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-gold flex-shrink-0">
+              <i class="fa-solid fa-circle-check text-sm"></i>
+            </span>
+            <div>
+              <strong id="about-smc-title" class="text-white block font-medium mb-1">Conceptos de Dinero Inteligente</strong>
+              <span id="about-smc-desc" class="text-sm text-dark-textMuted">Trading basado en bloques de órdenes, vacíos de liquidez y rupturas de estructura de mercado.</span>
+            </div>
+          </div>
+          <div class="glass-card rounded-xl p-5 border border-dark-border/60 flex items-start gap-4">
+            <span class="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-gold flex-shrink-0">
+              <i class="fa-solid fa-circle-check text-sm"></i>
+            </span>
+            <div>
+              <strong id="about-risk-title" class="text-white block font-medium mb-1">Gestión de Riesgo Rígida</strong>
+              <span id="about-risk-desc" class="text-sm text-dark-textMuted">Máximo 1% de riesgo por operación. Stop Loss claro y zonas de ganancias con objetivos múltiples.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-20 bg-dark-base/30 relative border-t border-dark-border/40">
+    <!-- Ambient Background Light -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold/5 rounded-full filter blur-[150px] pointer-events-none">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16">
+        <span id="pricing-tagline" class="text-xs font-bold text-gold uppercase tracking-widest">Planes de Precios</span>
+        <h2 id="pricing-title" class="text-3xl md:text-5xl font-extrabold text-white mt-2">Planes Premium Asequibles</h2>
+        <p id="pricing-desc" class="text-dark-textMuted max-w-xl mx-auto mt-4 text-sm">
+          Selecciona un paquete de precios que se adapte a tu presupuesto. Sin tarifas ocultas, acceso instantáneo al Telegram VIP.
+        </p>
+      </div>
+
+      <!-- Pricing Cards Grid -->
+      <div class="grid md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
+        <!-- Monthly Plan (Best Value / Highlighted) -->
+        <div
+          class="glass-card rounded-3xl p-8 relative flex flex-col justify-between border-2 border-gold glow-gold shadow-lg shadow-gold/10 bg-dark-card">
+          <!-- Highlight Badge -->
+          <div id="plan-m-value"
+            class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-gold to-gold-dark text-dark-deep font-extrabold text-xs uppercase tracking-widest shadow-md">
+            Promoción 60% OFF
+          </div>
+
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <div>
+                <h3 id="plan-m-title" class="text-2xl font-bold text-white">Mensual VIP</h3>
+                <p id="plan-m-sub" class="text-xs text-gold uppercase font-semibold tracking-wider mt-1">Suscripción Mensual</p>
+              </div>
+              <span class="p-3 rounded-xl bg-gold/10 text-gold text-2xl">
+                <i class="fa-solid fa-calendar-day"></i>
+              </span>
+            </div>
+
+            <div class="flex items-baseline gap-1 mb-2">
+              <span class="text-5xl font-extrabold text-white">$120</span>
+              <span id="plan-m-billing" class="text-dark-textMuted font-medium">USD / mes</span>
+            </div>
+            <!-- Savings display -->
+            <div class="text-xs text-emerald-400 font-bold mb-8">
+              <span id="plan-m-savings">Ahorra 60% (Antes $300 USD)</span>
+            </div>
+
+            <ul class="space-y-4 mb-8 text-sm text-dark-textMuted">
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-gold"></i>
+                <span id="plan-m-feat-1" class="text-white">Señales de XAUUSD y Forex</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-gold"></i>
+                <span id="plan-m-feat-2">Promedio de 3-5 señales por día</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-gold"></i>
+                <span id="plan-m-feat-3">Análisis completo de riesgo</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-gold"></i>
+                <span id="plan-m-feat-4">Acceso directo al Telegram VIP</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-gold"></i>
+                <span id="plan-m-feat-5">Soporte al cliente 24/7</span>
+              </li>
+            </ul>
+          </div>
+
+          <button onclick="initiatePayment('monthly')" id="plan-m-btn"
+            class="w-full py-4 rounded-xl bg-gradient-to-r from-gold via-gold to-gold-dark text-dark-deep font-extrabold text-base hover:scale-105 transition-all shadow-md shadow-gold/20">
+            Seleccionar Mensual
+          </button>
+        </div>
+
+        <!-- Lifetime/Permanent Plan -->
+        <div
+          class="glass-card rounded-3xl p-8 relative flex flex-col justify-between border border-dark-border bg-dark-card/50">
+          <!-- Highlight Badge -->
+          <div id="plan-l-value"
+            class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-gold/20 to-gold/40 text-gold font-extrabold text-xs uppercase tracking-widest shadow-md">
+            Promoción 60% OFF
+          </div>
+
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <div>
+                <h3 id="plan-l-title" class="text-2xl font-bold text-white">Permanente VIP</h3>
+                <p id="plan-l-sub" class="text-xs text-dark-textMuted uppercase font-semibold tracking-wider mt-1">Acceso de por Vida</p>
+              </div>
+              <span class="p-3 rounded-xl bg-dark-border text-white text-2xl">
+                <i class="fa-solid fa-infinity"></i>
+              </span>
+            </div>
+
+            <div class="flex items-baseline gap-1 mb-2">
+              <span class="text-5xl font-extrabold text-white">$300</span>
+              <span id="plan-l-billing" class="text-dark-textMuted font-medium">USD / único pago</span>
+            </div>
+            <!-- Savings display -->
+            <div class="text-xs text-emerald-400 font-bold mb-8">
+              <span id="plan-l-savings">Ahorra 60% (Antes $750 USD)</span>
+            </div>
+
+            <ul class="space-y-4 mb-8 text-sm text-dark-textMuted">
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-gold"></i>
+                <span id="plan-l-feat-1" class="text-white">Señales de XAUUSD y Forex</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-gold"></i>
+                <span id="plan-l-feat-2">Promedio de 3-5 señales por día</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-gold"></i>
+                <span id="plan-l-feat-3">Análisis completo de riesgo</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-gold"></i>
+                <span id="plan-l-feat-4">Acceso directo al Telegram VIP</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-circle-check text-gold"></i>
+                <span id="plan-l-feat-5">Soporte al cliente 24/7</span>
+              </li>
+            </ul>
+          </div>
+
+          <button onclick="initiatePayment('lifetime')" id="plan-l-btn"
+            class="w-full py-4 rounded-xl border border-dark-border text-white font-bold text-base hover:bg-dark-border transition-all">
+            Seleccionar Permanente
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span id="test-tagline" class="text-xs font-bold text-gold uppercase tracking-widest">Reseñas</span>
+        <h2 id="test-title" class="text-3xl md:text-5xl font-extrabold text-white mt-2">Lo Que Dicen Nuestros Miembros
+        </h2>
+        <p id="test-desc" class="text-dark-textMuted max-w-xl mx-auto mt-4 text-sm">
+          Comentarios reales de miembros activos que transformaron su trading con nosotros.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Testimonial 1 -->
+        <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between glow-gold-hover transition-all duration-300">
+          <div class="mb-6">
+            <div class="flex text-gold gap-1 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p id="test-1-text" class="text-sm text-dark-textMuted italic leading-relaxed">
+              "Las señales de Oro son una locura. Ayer atrapamos 180 pips en la sesión de Londres. Entradas muy precisas y exactas."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-dark-border/40">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200&h=200" alt="Juan Delgado" class="w-10 h-10 rounded-full object-cover border border-gold/40">
+            <div>
+              <h4 id="test-1-user" class="text-sm font-bold text-white">Juan Delgado</h4>
+              <p id="test-1-status" class="text-xs text-dark-textMuted">Miembro VIP desde Julio 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between glow-gold-hover transition-all duration-300 border-t-2 border-gold/40">
+          <div class="mb-6">
+            <div class="flex text-gold gap-1 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p id="test-2-text" class="text-sm text-dark-textMuted italic leading-relaxed">
+              "Me encanta su transparencia. Muestran los trades perdidos también, pero su win rate es tan sólido que el balance mensual siempre es positivo."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-dark-border/40">
+            <img src="https://raw.githubusercontent.com/alohe/avatars/main/png/memo_2.png" alt="Sandra M." class="w-10 h-10 rounded-full object-cover border border-gold/40">
+            <div>
+              <h4 id="test-2-user" class="text-sm font-bold text-white">Sandra M.</h4>
+              <p id="test-2-status" class="text-xs text-dark-textMuted">Miembro VIP desde Julio 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between glow-gold-hover transition-all duration-300">
+          <div class="mb-6">
+            <div class="flex text-gold gap-1 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p id="test-3-text" class="text-sm text-dark-textMuted italic leading-relaxed">
+              "La opción de Binance Pay hace que sea muy fácil pagar en USDT. Obtuve mi enlace de Discord al instante. Recomiendo el Plan Anual."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-dark-border/40">
+            <img src="https://raw.githubusercontent.com/alohe/avatars/main/png/memo_3.png" alt="Lars K." class="w-10 h-10 rounded-full object-cover border border-gold/40">
+            <div>
+              <h4 id="test-3-user" class="text-sm font-bold text-white">Lars K.</h4>
+              <p id="test-3-status" class="text-xs text-dark-textMuted">Miembro VIP desde Julio 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between glow-gold-hover transition-all duration-300">
+          <div class="mb-6">
+            <div class="flex text-gold gap-1 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p id="test-4-text" class="text-sm text-dark-textMuted italic leading-relaxed">
+              "Es el mejor canal de señales que he probado. La gestión de riesgo del 1% me ha ayudado a proteger mi cuenta y crecer de forma constante."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-dark-border/40">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200&h=200" alt="Sofia Rodriguez" class="w-10 h-10 rounded-full object-cover border border-gold/40">
+            <div>
+              <h4 id="test-4-user" class="text-sm font-bold text-white">Sofia Rodriguez</h4>
+              <p id="test-4-status" class="text-xs text-dark-textMuted">Miembro VIP desde Julio 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between glow-gold-hover transition-all duration-300">
+          <div class="mb-6">
+            <div class="flex text-gold gap-1 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p id="test-5-text" class="text-sm text-dark-textMuted italic leading-relaxed">
+              "Los análisis técnicos detallados que envían antes de cada operación son una mina de oro. He aprendido muchísimo en la comunidad VIP."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-dark-border/40">
+            <img src="https://raw.githubusercontent.com/alohe/avatars/main/png/memo_5.png" alt="Mateo Gomez" class="w-10 h-10 rounded-full object-cover border border-gold/40">
+            <div>
+              <h4 id="test-5-user" class="text-sm font-bold text-white">Mateo Gomez</h4>
+              <p id="test-5-status" class="text-xs text-dark-textMuted">Miembro VIP desde Julio 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 6 -->
+        <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between glow-gold-hover transition-all duration-300 border-t-2 border-gold/40">
+          <div class="mb-6">
+            <div class="flex text-gold gap-1 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p id="test-6-text" class="text-sm text-dark-textMuted italic leading-relaxed">
+              "El soporte es excelente y las configuraciones de XAUUSD son muy limpias. Por fin encontré consistencia en mi trading."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-dark-border/40">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200&h=200" alt="Camila Torres" class="w-10 h-10 rounded-full object-cover border border-gold/40">
+            <div>
+              <h4 id="test-6-user" class="text-sm font-bold text-white">Camila Torres</h4>
+              <p id="test-6-status" class="text-xs text-dark-textMuted">Miembro VIP desde Julio 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 7 -->
+        <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between glow-gold-hover transition-all duration-300">
+          <div class="mb-6">
+            <div class="flex text-gold gap-1 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p id="test-7-text" class="text-sm text-dark-textMuted italic leading-relaxed">
+              "Increíble comunidad. Las señales no son solo para copiar, sino que explican el porqué de cada entrada usando Smart Money Concepts."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-dark-border/40">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200" alt="Daniel Silva" class="w-10 h-10 rounded-full object-cover border border-gold/40">
+            <div>
+              <h4 id="test-7-user" class="text-sm font-bold text-white">Daniel Silva</h4>
+              <p id="test-7-status" class="text-xs text-dark-textMuted">Miembro VIP desde Julio 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 8 -->
+        <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between glow-gold-hover transition-all duration-300">
+          <div class="mb-6">
+            <div class="flex text-gold gap-1 mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p id="test-8-text" class="text-sm text-dark-textMuted italic leading-relaxed">
+              "Había perdido dinero en otros canales antes, pero aquí la transparencia es real. Muy contenta con las ganancias de este mes."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-dark-border/40">
+            <img src="https://raw.githubusercontent.com/alohe/avatars/main/png/memo_8.png" alt="Elena Rossi" class="w-10 h-10 rounded-full object-cover border border-gold/40">
+            <div>
+              <h4 id="test-8-user" class="text-sm font-bold text-white">Elena Rossi</h4>
+              <p id="test-8-status" class="text-xs text-dark-textMuted">Miembro VIP desde Julio 2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 bg-dark-base/40 relative border-t border-dark-border/40">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span id="faq-tagline" class="text-xs font-bold text-gold uppercase tracking-widest">Preguntas</span>
+        <h2 id="faq-title" class="text-3xl md:text-5xl font-extrabold text-white mt-2">Preguntas Frecuentes</h2>
+      </div>
+
+      <!-- FAQ Accordions -->
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <div class="glass-card rounded-xl overflow-hidden border border-dark-border">
+          <button
+            class="w-full px-6 py-5 text-left font-bold flex justify-between items-center text-white hover:text-gold transition-colors focus:outline-none faq-btn">
+            <span id="faq-q1">¿Cómo recibo las señales?</span>
+            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <p id="faq-a1" class="px-6 pb-5 text-sm text-dark-textMuted leading-relaxed">
+              Todas las señales se transmiten en vivo a través de nuestro canal privado de Telegram VIP y Discord VIP.
+              Proporcionamos precio de entrada, stop loss y tres objetivos de ganancia.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="glass-card rounded-xl overflow-hidden border border-dark-border">
+          <button
+            class="w-full px-6 py-5 text-left font-bold flex justify-between items-center text-white hover:text-gold transition-colors focus:outline-none faq-btn">
+            <span id="faq-q2">¿Qué métodos de pago aceptan?</span>
+            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <p id="faq-a2" class="px-6 pb-5 text-sm text-dark-textMuted leading-relaxed">
+              Aceptamos oficialmente Binance Pay y transferencias directas de USDT a través de las redes TRC20 y BSC.
+              Esto permite transacciones instantáneas y de bajo costo.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="glass-card rounded-xl overflow-hidden border border-dark-border">
+          <button
+            class="w-full px-6 py-5 text-left font-bold flex justify-between items-center text-white hover:text-gold transition-colors focus:outline-none faq-btn">
+            <span id="faq-q3">¿Puedo cancelar mi suscripción?</span>
+            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <p id="faq-a3" class="px-6 pb-5 text-sm text-dark-textMuted leading-relaxed">
+              Sí, las suscripciones recurrentes se pueden cancelar en cualquier momento. Los pagos directos en
+              criptomonedas no se renuevan automáticamente; solo pagas de nuevo si deseas extender tu acceso VIP.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-dark-deep border-t border-dark-border/40 py-12 text-center text-xs text-dark-textMuted">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="logo.jpg" alt="Gold Edge Signals Logo" class="w-12 h-12 rounded-full object-cover border border-gold shadow-md shadow-gold/25">
+        <span class="text-sm font-extrabold tracking-wider text-white">GOLD EDGE SIGNALS</span>
+      </div>
+      <p id="footer-copyright">© 2026 Gold Edge Signals. Todos los derechos reservados. El trading de divisas y
+        criptoactivos conlleva un alto riesgo.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-gold"><i class="fa-brands fa-telegram text-lg"></i></a>
+        <a href="#" class="hover:text-gold"><i class="fa-brands fa-discord text-lg"></i></a>
+        <a href="#" class="hover:text-gold"><i class="fa-brands fa-twitter text-lg"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de Pasarela de Pagos (Binance Pay / USDT QR Simulator) -->
+  <div id="payment-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-deep/80 backdrop-blur-md hidden">
+    <div
+      class="glass-card w-full max-w-lg rounded-3xl border border-dark-border glow-gold relative animate-in fade-in zoom-in-95 duration-200 p-10 max-h-[95vh] overflow-y-auto">
+
+      <!-- Close Button -->
+      <button onclick="closePaymentModal()"
+        class="absolute top-4 right-4 text-dark-textMuted hover:text-white text-xl focus:outline-none">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Modal Content Wrapper -->
+      <div>
+        <!-- Step 1: Scan & Pay -->
+        <div id="payment-step-1" class="flex flex-col items-center text-center space-y-8">
+          <h3 id="modal-checkout-title" class="text-3xl font-extrabold text-white tracking-wide">Escanea para Pagar</h3>
+          
+          <!-- Centered QR code container -->
+          <div class="p-4 bg-white rounded-3xl border border-dark-border shadow-lg shadow-gold/15 w-[380px] h-auto flex items-center justify-center">
+            <img src="qr-code.png" alt="Binance Pay QR Code" class="w-full h-auto rounded-2xl">
+          </div>
+
+          <!-- Monto exacto -->
+          <div>
+            <p class="text-base text-dark-textMuted font-semibold">
+              <span id="modal-amount-prompt">Monto exacto a enviar:</span>
+              <span class="text-4xl font-extrabold text-gold block mt-3"><span id="modal-amount-display">120</span> USDT</span>
+            </p>
+          </div>
+
+          <!-- Button to simulate verification -->
+          <button onclick="simulateQrPaymentVerification()" id="modal-verify-btn"
+            class="w-full py-5 rounded-xl bg-gradient-to-r from-gold via-gold to-gold-dark text-dark-deep font-extrabold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-gold/25 glow-gold">
+            Verificar Pago (Simular)
+          </button>
+        </div>
+
+        <!-- Step 2: Processing / Loading -->
+        <div id="payment-step-loading" class="hidden py-8 flex flex-col items-center justify-center gap-4 text-center">
+          <div class="w-12 h-12 rounded-full border-4 border-gold border-t-transparent animate-spin"></div>
+          <p id="modal-loading" class="text-sm font-semibold text-white">Verificando pago en la blockchain...</p>
+          <p id="modal-connecting" class="text-xs text-dark-textMuted">Confirmando transacción...</p>
+        </div>
+
+        <!-- Step 5: Payment Success Screen -->
+        <div id="payment-step-success" class="hidden py-4 text-center space-y-6">
+          <div class="p-4 bg-gold/5 rounded-xl border border-gold/20 max-w-sm mx-auto text-left space-y-2">
+            <span id="modal-steps-activation"
+              class="text-xs font-bold text-gold uppercase tracking-wider block mb-1">Pasos para activar acceso:</span>
+            <p class="text-xs text-white leading-relaxed">
+              <span id="modal-step-1">1. Haz clic en el botón de abajo para unirte al canal de Telegram.</span><br>
+              <span id="modal-step-2-label">2. El bot VIP verificará tu ID de transacción.</span><br>
+              <span id="modal-step-3">3. Recibirás tu acceso VIP de forma instantánea.</span>
+            </p>
+          </div>
+
+          <a href="https://t.me/" target="_blank" onclick="closePaymentModal()" id="modal-telegram-btn"
+            class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/20 w-full justify-center">
+            <i class="fa-brands fa-telegram text-xl"></i> Unirse al Telegram VIP
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>
